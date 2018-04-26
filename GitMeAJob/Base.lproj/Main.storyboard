@@ -80,7 +80,6 @@
                                 <state key="normal" title="SEARCH"/>
                                 <connections>
                                     <action selector="onSearchButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDu-QH-QYZ"/>
-                                    <segue destination="v5h-Xv-KPl" kind="show" identifier="searchSegue" id="3KF-Rw-hhM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,16 +106,17 @@
                         <outlet property="jobDescription" destination="CyH-TX-RXE" id="DS5-Ti-jUK"/>
                         <outlet property="jobLocation" destination="h1A-Uz-XST" id="oef-EF-5GU"/>
                         <outlet property="searchButton" destination="449-kx-Yjy" id="W3f-xK-T0U"/>
+                        <segue destination="v5h-Xv-KPl" kind="show" identifier="searchSegue" id="QPU-f0-wUK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Results Table View Controller-->
         <scene sceneID="Lms-HK-Cet">
             <objects>
-                <tableViewController id="v5h-Xv-KPl" sceneMemberID="viewController">
+                <tableViewController id="v5h-Xv-KPl" customClass="ResultsTableViewController" customModule="GitMeAJob" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gJr-yU-vXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,7 +152,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-RY-CiO">
                                                     <rect key="frame" x="0.0" y="67.5" width="182" height="70.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full stack developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-ui-PTo">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full stack developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-ui-PTo">
                                                             <rect key="frame" x="0.0" y="0.0" width="182" height="23"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>

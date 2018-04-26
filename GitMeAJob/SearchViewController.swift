@@ -37,7 +37,7 @@ class SearchViewController: UIViewController {
             switch result {
             case .success(let jobs):
                 self.jobs = jobs
-                print("The jobs are: \(self.jobs)")
+                self.performSegue(withIdentifier: "searchSegue", sender: nil)
             case .failure(let error):
                 fatalError("error: \(error.localizedDescription)")
             }
@@ -48,8 +48,10 @@ class SearchViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "searchSegue" {
+            let resultsViewController = segue.destination as? ResultsTableViewController
+            resultsViewController?.jobs = self.jobs
+        }
     }
     
     // MARK: - Helper methods
