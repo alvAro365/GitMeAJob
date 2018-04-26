@@ -52,7 +52,6 @@ extension Job {
                     let decoder = JSONDecoder()
                     do {
                         let jobs = try decoder.decode([Job].self, from: jsonData)
-                        print(jobs)
                         completion?(.success(jobs))
                     } catch {
                         completion?(.failure(error))
