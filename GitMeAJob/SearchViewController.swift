@@ -13,12 +13,14 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var jobDescription: UITextField!
     @IBOutlet weak var jobLocation: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
     var jobs = [Job]()
     var fullTimeJobOnly = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.isHidden = true
         searchButtonState()
     }
 
@@ -28,6 +30,8 @@ class SearchViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func onSearchButtonClick(_ sender: UIButton) {
+        progressView.isHidden = false
+        progressView.setProgress(0.95, animated: true)
         let description = jobDescription.text
         let location = jobLocation.text
         print("The description is: \(description!)")
@@ -36,6 +40,7 @@ class SearchViewController: UIViewController {
         Job.getJobs(description: description!, location: location!, fullTime: fullTimeJobOnly) { result in
             switch result {
             case .success(let jobs):
+                self.progressView.setProgress(1.0, animated: true)
                 self.jobs = jobs
                 self.performSegue(withIdentifier: "searchSegue", sender: nil)
             case .failure(let error):
@@ -51,6 +56,8 @@ class SearchViewController: UIViewController {
         if segue.identifier == "searchSegue" {
             let resultsViewController = segue.destination as? ResultsTableViewController
             resultsViewController?.jobs = self.jobs
+            progressView.isHidden = true
+            progressView.setProgress(0.0, animated: false)
         }
     }
     

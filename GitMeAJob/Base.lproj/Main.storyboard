@@ -82,11 +82,16 @@
                                     <action selector="onSearchButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDu-QH-QYZ"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hAG-GO-HZb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BOc-bR-dll" secondAttribute="trailing" constant="16" id="0fP-7k-Zr9"/>
+                            <constraint firstItem="hAG-GO-HZb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Rr-b0-38P"/>
                             <constraint firstItem="BOc-bR-dll" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="D4e-73-LRo"/>
+                            <constraint firstItem="hAG-GO-HZb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aTP-qt-uY6"/>
                             <constraint firstItem="z4n-MH-944" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cM6-Ce-crz"/>
                             <constraint firstItem="449-kx-Yjy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eOb-PQ-LKY"/>
                             <constraint firstItem="BHS-Gk-b6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hX6-X1-fSJ"/>
@@ -97,6 +102,7 @@
                             <constraint firstItem="449-kx-Yjy" firstAttribute="height" secondItem="BOc-bR-dll" secondAttribute="height" id="oem-ny-p6v"/>
                             <constraint firstItem="z4n-MH-944" firstAttribute="width" secondItem="BOc-bR-dll" secondAttribute="width" id="plQ-86-Mze"/>
                             <constraint firstItem="z4n-MH-944" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ycf-cs-wGT"/>
+                            <constraint firstAttribute="trailing" secondItem="hAG-GO-HZb" secondAttribute="trailing" id="yqL-Qx-Ngb"/>
                             <constraint firstItem="449-kx-Yjy" firstAttribute="width" secondItem="z4n-MH-944" secondAttribute="width" id="zgD-9U-150"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -105,6 +111,7 @@
                     <connections>
                         <outlet property="jobDescription" destination="CyH-TX-RXE" id="DS5-Ti-jUK"/>
                         <outlet property="jobLocation" destination="h1A-Uz-XST" id="oef-EF-5GU"/>
+                        <outlet property="progressView" destination="hAG-GO-HZb" id="koU-DC-nRV"/>
                         <outlet property="searchButton" destination="449-kx-Yjy" id="W3f-xK-T0U"/>
                         <segue destination="v5h-Xv-KPl" kind="show" identifier="searchSegue" id="QPU-f0-wUK"/>
                     </connections>
