@@ -21,6 +21,9 @@ class ResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,13 +46,14 @@ class ResultsTableViewController: UITableViewController {
         if jobs!.count > 0 {
             let job = jobs![indexPath.row]
             
+            cell.jobTitleLabel.numberOfLines = 0
             cell.jobTitleLabel.text = job.title
             cell.companyLabel.text = job.company
             cell.locationLabel.text = job.location
             cell.timeLabel.text = Date.getJobPublishedDate(convertDate: job.createdAt)
             
             if job.type == "Full Time" {
-                cell.fullTimeLabel.text = "FULL TIME"
+                cell.fullTimeLabel.text = "FULL \nTIME"
             } else {
                 cell.fullTimeLabel.isHidden = true
             }
@@ -94,14 +98,20 @@ class ResultsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let viewC = segue.destination as! WebViewController
+        if let row = tableView.indexPathForSelectedRow?.row{
+            if jobs!.count > 0 {
+               viewC.stringUrl = jobs![row].url
+            } else {
+                viewC.stringUrl = URL(string: "https://jobs.github.com")
+            }
+        }
     }
-    */
+    
 
 }

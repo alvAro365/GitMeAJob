@@ -12,7 +12,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var jobTitleLabel: UILabel!
-    @IBOutlet weak var someLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var fullTimeLabel: UILabel!
     
@@ -25,6 +24,8 @@ class CustomTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    
+        fullTimeLabel.numberOfLines = 2
     }
 
 }
