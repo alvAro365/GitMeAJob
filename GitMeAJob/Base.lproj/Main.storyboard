@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QjG-iq-ocd" id="P1y-4L-EwQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="118.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-n2-34m">
@@ -263,6 +263,10 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Jr-TC-klV">
+                                <rect key="frame" x="177" y="367" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -274,6 +278,7 @@
                         <viewLayoutGuide key="safeArea" id="1Kd-mz-ftS"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="2Jr-TC-klV" id="YsP-Ae-4G5"/>
                         <outlet property="webView" destination="Wvp-uz-dww" id="R0T-Zo-Y5o"/>
                     </connections>
                 </viewController>
