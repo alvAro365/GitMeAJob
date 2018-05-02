@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var fullTime: UIButton!
     @IBOutlet weak var jobDescription: UITextField!
     @IBOutlet weak var jobLocation: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -28,7 +29,10 @@ class SearchViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     // MARK: - Actions
-    
+
+    @IBAction func fullTimePressed(_ sender: UIButton) {
+        toggleFullTime()
+    }
     @IBAction func onSearchButtonClick(_ sender: UIButton) {
         progressView.isHidden = false
         progressView.setProgress(0.95, animated: true)
@@ -62,6 +66,10 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - Helper methods
+    func toggleFullTime() {
+        fullTimeJobOnly = !fullTimeJobOnly
+        fullTimeJobOnly ? fullTime.setBackgroundImage(#imageLiteral(resourceName: "checked"), for: .normal) : fullTime.setBackgroundImage(#imageLiteral(resourceName: "empty"), for: .normal)
+    }
     
     func searchButtonState() {
         searchButton.isEnabled = false
