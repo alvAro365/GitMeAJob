@@ -22,6 +22,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.isHidden = true
+        changeSearchButtonDesign()
         searchButtonState()
     }
 
@@ -66,6 +67,9 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - Helper methods
+    func changeSearchButtonDesign() {
+        searchButton.layer.cornerRadius = 8
+    }
     func toggleFullTime() {
         fullTimeJobOnly = !fullTimeJobOnly
         fullTimeJobOnly ? fullTime.setBackgroundImage(#imageLiteral(resourceName: "checked"), for: .normal) : fullTime.setBackgroundImage(#imageLiteral(resourceName: "empty"), for: .normal)
